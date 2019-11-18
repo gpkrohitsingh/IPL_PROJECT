@@ -1,0 +1,169 @@
+<div class="container-fluid pt-5">
+    <h4 class="pt-5">Add Players</h4>
+    <hr>
+
+    <form class="form-group" #playerForm="ngForm">
+        <div class="row">
+            <div class="col-4">
+                <label for="playerName">Player's Name</label>
+                <input type="text" name="playerName" class="form-control" [(ngModel)]="player.playerName" required
+                    #plyrName="ngModel">
+                <div class="help-block" *ngIf="plyrName.touched && plyrName.invalid">
+                    please enter player's name
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="pref">Preference</label>
+                <input type="text" name="pref" class="form-control" [(ngModel)]="player.preference" required
+                    #pref="ngModel">
+                <div class="help-block" *ngIf="pref.touched && pref.invalid">
+                    please enter player's preference
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="matPlayed">Matches Played</label>
+                <input type="text" name="matPlayed" class="form-control" [(ngModel)]="player.matchesPlayed" required
+                    #matPlayed="ngModel">
+                <div class="help-block" *ngIf="matPlayed.touched && matPlayed.invalid">
+                    please enter total played matches
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="runs">Runs</label>
+                <input type="text" name="runs" class="form-control" [(ngModel)]="player.runs" required #run="ngModel">
+                <div class="help-block" *ngIf="run.touched && run.invalid">
+                    please enter total runs
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="wick">wickets</label>
+                <input type="text" name="wick" class="form-control" [(ngModel)]="player.wickets" required
+                    #wick="ngModel">
+                <div class="help-block" *ngIf="wick.touched && wick.invalid">
+                    please enter total wickets
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3">
+
+            <div class="col-2">
+                <label for="highScore">Highest Score</label>
+                <input type="text" name="highScore" class="form-control" [(ngModel)]="player.highestScore" required
+                    #highScore="ngModel">
+                <div class="help-block" *ngIf="highScore.touched && highScore.invalid">
+                    please enter highest score
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="bestWick">Best Wickets</label>
+                <input type="text" name="bestWick" class="form-control" [(ngModel)]="player.bestWickets" required
+                    #bestWick="ngModel">
+                <div class="help-block" *ngIf="bestWick.touched && bestWick.invalid">
+                    please enter best of wickets
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="fifties">Fifties</label>
+                <input type="text" name="fifties" class="form-control" [(ngModel)]="player.fifties" required
+                    #fifty="ngModel">
+                <div class="help-block" *ngIf="fifty.touched && fifty.invalid">
+                    please enter fifties
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="centuries">Centuries</label>
+                <input type="text" name="centuries" class="form-control" [(ngModel)]="player.centuries" required
+                    #century="ngModel">
+                <div class="help-block" *ngIf="century.touched && century.invalid">
+                    please enter centuries
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="thirties">Thirties</label>
+                <input type="text" name="thirties" class="form-control" [(ngModel)]="player.thirties" required
+                    #thirty="ngModel">
+                <div class="help-block" *ngIf="thirty.touched && thirty.invalid">
+                    please enter thirties
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="catches">Catches</label>
+                <input type="text" name="catches" class="form-control" [(ngModel)]="player.catches" required
+                    #cat="ngModel">
+                <div class="help-block" *ngIf="cat.touched && cat.invalid">
+                    please enter catches
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-2">
+                <label for="stumpings">Stumpings</label>
+                <input type="text" name="stumpings" class="form-control" [(ngModel)]="player.stumpings" required
+                    #stumping="ngModel">
+                <div class="help-block" *ngIf="stumping.touched && stumping.invalid">
+                    please enter no of stumpings
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="strikerate">Strikerate</label>
+                <input type="text" name="strikerate" class="form-control" [(ngModel)]="player.strikeRate" required
+                    #stkRate="ngModel">
+                <div class="help-block" *ngIf="stkRate.touched && stkRate.invalid">
+                    please enter strikerate
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="average">Average</label>
+                <input type="text" name="average" class="form-control" [(ngModel)]="player.average" required
+                    #avg="ngModel">
+                <div class="help-block" *ngIf="avg.touched && avg.invalid">
+                    please enter average
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="fours">Fours</label>
+                <input type="text" name="fours" class="form-control" [(ngModel)]="player.foures" required
+                    #four="ngModel">
+                <div class="help-block" *ngIf="four.touched && four.invalid">
+                    please enter no of fours
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="sixes">Sixes</label>
+                <input type="text" name="sixes" class="form-control" [(ngModel)]="player.sixes" required #six="ngModel">
+                <div class="help-block" *ngIf="six.touched && six.invalid">
+                    please enter no of sixes
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="team">Team</label>
+                <input type="text" name="team" class="form-control" [(ngModel)]="player.team" required
+                    #tm="ngModel">
+                <div class="help-block" *ngIf="tm.touched && tm.invalid">
+                    please enter team name
+                </div>
+            </div>
+            <!-- <div class="col-2">
+                <label for="orders" [(ngModel)]="player.team">Select Team</label><br>
+                <select formControlName="orders" id="orders">
+                    <option>CSK</option>
+                    <option>MI</option>
+                    <option>KKR</option>
+                    <option>RCB</option>
+                    <option>RR</option>
+                    <option>KXP</option>
+                    <option>SH</option>
+                    <option>DI</option>
+                </select>
+            </div> -->
+
+
+
+
+        </div>
+        <div class="pull-right pt-3">
+            <button class="btn btn-primary" [disabled]="!playerForm.valid" (click)="savePlayer()">Save</button>
+        </div>
+    </form>
+
+</div>

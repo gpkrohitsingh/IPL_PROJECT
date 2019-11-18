@@ -1,0 +1,50 @@
+<div class="row container-fluid">
+    <div class="col-3 mt-5">
+        <div class="d-block mt-5">
+            <h4 class="d-inline">Team</h4>
+            <span class="pull-right">
+                <a routerLink="/teams/add">
+                    <fa [name]="'plus'" [size]="2"></fa>
+                </a>
+            </span>
+        </div>
+        <hr>
+        <div class="list-group">
+            <div class="list-group-item" *ngFor="let team of teams">
+                <div class="d-block">
+                    <h6 class="d-inline">{{team.team}}</h6>
+                    <fa [name]="'trash'" class="pull-right" (click)="openModal(team)"></fa>
+                    <fa [name]="'pencil'" class="pull-right" (click)="editTeam(team)"></fa>
+                    <fa [name]="'info-circle'" class="pull-right" (click)="teamDetails(team)"></fa>
+                </div>
+                <h6 class="text-muted">{{team.description}}</h6>
+            </div>
+        </div>
+
+
+    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="deleteTeam(team)">Yes</button>
+                    <button type="button" class="btn btn-default" (click)="onCloseHandled()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- <div class="col-8 mt-5" *ngIf="isShow"><h5 class="mt-5">picture will be added....</h5></div> -->
+    <div class="col-9 mt-5">
+        <router-outlet></router-outlet>
+    </div>
+</div>

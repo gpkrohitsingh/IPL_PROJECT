@@ -1,0 +1,70 @@
+<div class="container-fluid right">
+    <div>
+        <div class="d-block mt-5">
+            <h4 class="d-inline">{{team.team}}'s Details</h4>
+        </div>
+        <hr>
+        <div>
+            <h5>{{team.description}}</h5>
+            <div class="row">
+                <div class="col-3">
+                    <app-dashboard-dock [border]="['border-primary']" [text]="['text-primary']"
+                        [title]="['Matches played']" [value]="[team.totalPlayed]"></app-dashboard-dock>
+                </div>
+                <div class="col-3">
+                    <app-dashboard-dock [border]="['border-primary']" [text]="['text-primary']"
+                        [title]="['Total Won']" [value]="[team.totalWon]"></app-dashboard-dock>
+                </div>
+                <div class="col-3">
+                    <app-dashboard-dock [border]="['border-primary']" [text]="['text-primary']"
+                        [title]="['Total Lost']" [value]="[team.totalLost]"></app-dashboard-dock>
+                </div>
+                <div class="col-3">
+                    <app-dashboard-dock [border]="['border-primary']" [text]="['text-primary']"
+                        [title]="['No Results']" [value]="[team.noResult]"></app-dashboard-dock>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-block m-3">
+        <h5 class="d-inline">Players</h5>
+    </div>
+    <table class="table table-striped mt-3">
+        <thead>
+            <th scope="col">Player</th>
+            <th scope="col">Match</th>
+            <th scope="col">Runs</th>
+            <th scope="col">HS</th>
+            <th scope="col">Avg</th>
+            <th scope="col">SR</th>
+            <th scope="col">Wik</th>
+            <th scope="col">Best</th>
+            <th scope="col">100</th>
+            <th scope="col">50</th>
+            <th scope="col">4s</th>
+            <th scope="col">6s</th>
+            <th scope="col">CT</th>
+            <th scope="col">ST</th>
+        </thead>
+        <tbody>
+            <tr class="text-italic" *ngFor="let player of team.players">
+                <th scope="row">{{player.playerName}}
+                    <span class="uk-text-small text-muted font-weight-small">({{player.preference}})</span>
+                </th>
+                <th class="font-weight-normal">{{player.matchesPlayed}}</th>
+                <th class="font-weight-normal">{{player.runs}}</th>
+                <th class="font-weight-normal">{{player.highestScore}}</th>
+                <th class="font-weight-normal">{{player.average}}</th>
+                <th class="font-weight-normal">{{player.strikeRate}}</th>
+                <th class="font-weight-normal">{{player.wickets}}</th>
+                <th class="font-weight-normal">{{player.bestWickets}}</th>
+                <th class="font-weight-normal">{{player.centuries}}</th>
+                <th class="font-weight-normal">{{player.fifties}}</th>
+                <th class="font-weight-normal">{{player.foures}}</th>
+                <th class="font-weight-normal">{{player.sixes}}</th>
+                <th class="font-weight-normal">{{player.catches}}</th>
+                <th class="font-weight-normal">{{player.stumpings}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

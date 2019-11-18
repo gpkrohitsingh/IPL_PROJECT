@@ -1,0 +1,124 @@
+<div class="container pt-3">
+    <div class="d-block mt-5">
+        <h4 class="d-inline">Add/Edit team</h4>
+    </div>
+    <hr>
+    <form class="form-group" #mainForm="ngForm">
+        <div class="row">
+            <div class="col-3">
+                <label for="team">Team</label>
+                <input type="text" name="team" class="form-control" [(ngModel)]="team.team" required
+                    #teamName="ngModel">
+                <div class="help-block" *ngIf="teamName.touched && teamName.invalid">
+                    please enter team's name
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" class="form-control" [(ngModel)]="team.description" required
+                    #des="ngModel">
+                <div class="help-block" *ngIf="des.touched && des.invalid">
+                    please enter team's description
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="owner">Owner</label>
+                <input type="text" name="owner" class="form-control" [(ngModel)]="team.owner" required
+                    #own="ngModel">
+                <div class="help-block" *ngIf="own.touched && own.invalid">
+                    please enter owner's description
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-3">
+                <label for="matPlayed">Matches Played</label>
+                <input type="text" name="matPlayed" class="form-control" [(ngModel)]="team.totalPlayed" required
+                    #matPlayed="ngModel">
+                <div class="help-block" *ngIf="matPlayed.touched && matPlayed.invalid">
+                    please enter total played matches
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="won">Total Won</label>
+                <input type="text" name="won" class="form-control" [(ngModel)]="team.totalWon" required
+                    #totalWon="ngModel">
+                <div class="help-block" *ngIf="totalWon.touched && totalWon.invalid">
+                    please enter total won
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="lost">Total Lost</label>
+                <input type="text" name="lost" class="form-control" [(ngModel)]="team.totalLost" required
+                    #totalLost="ngModel">
+                <div class="help-block" *ngIf="totalLost.touched && totalLost.invalid">
+                    please enter total lost
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="noResult">No Result</label>
+                <input type="text" name="noResult" class="form-control" [(ngModel)]="team.noResult" required
+                    #noresult="ngModel">
+                <div class="help-block" *ngIf="noresult.touched && noresult.invalid">
+                    please enter no result
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row pt-3">
+            <div class="col-6">
+                <h6>Remaining Players</h6>
+                <hr>
+                <div class="list-group">
+                    <div class="list-group-item" *ngFor="let player of players">
+                        <span>
+                            <input type="checkbox" class="checkbox" value="player"
+                                (click)="onSelectCheckBox(player, $event)">
+                        </span>
+                        {{ player.playerName}}
+                        <span class="text-small text-muted font-weight-light">({{player.preference}})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h6>Selected Players</h6>
+                <hr>
+                <div class="list-group">
+                    <div class="list-group-item" *ngFor="let teamPlayer of team.players">
+                        <button type="button" class="close" data-toggle="modal" (click)="onDeletePlayer(teamPlayer)"
+                            data-target="#deletePlayerModal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div>{{ teamPlayer.playerName}}
+                            <span class="text-small text-muted font-weight-light">({{teamPlayer.preference}})</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="pull-right pt-3">
+            <button class="btn btn-primary" [disabled]="!mainForm.valid" (click)="saveData()">Save</button>
+        </div> 
+
+        <!-- <div *ngIf="selectedPlayer" class="modal fade" id="deletePlayerModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Removing Player</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Do you really want to remove {{ selectedPlayer.playerName }} from {{ team.team }}?
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" type="button" class="btn btn-primary"
+                            (click)="onDeletePlayerYes()">
+                            Yes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </form>
+</div>

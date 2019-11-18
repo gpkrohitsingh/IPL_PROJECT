@@ -1,0 +1,79 @@
+<div class="container-fluid pt-5">
+    <h4 class="text-center pt-3">Player List</h4>
+    <div class="d-block">
+        <h5 class="d-inline">Players</h5>
+        <span class="pull-right">
+            <a routerLink="/players/add">
+                <fa [name]="'plus'" [size]="4"></fa>
+            </a>
+        </span>
+    </div>
+    <table class="table table-striped mt-3">
+        <thead>
+            <th scope="col">Player</th>
+            <th scope="col">Match</th>
+            <th scope="col">Runs</th>
+            <th scope="col">HS</th>
+            <th scope="col">Avg</th>
+            <th scope="col">SR</th>
+            <th scope="col">Wik</th>
+            <th scope="col">Best</th>
+            <th scope="col">100</th>
+            <th scope="col">50</th>
+            <th scope="col">4s</th>
+            <th scope="col">6s</th>
+            <th scope="col">CT</th>
+            <th scope="col">ST</th>
+            <th scope="col">ACTION</th>
+        </thead>
+        <tbody>
+            <tr class="text-italic" *ngFor="let player of players">
+                <th scope="row">{{player.playerName}}
+                    <span class="uk-text-small text-muted font-weight-small">({{player.preference}})</span>
+                </th>
+                <th class="font-weight-normal">{{player.matchesPlayed}}</th>
+                <th class="font-weight-normal">{{player.runs}}</th>
+                <th class="font-weight-normal">{{player.highestScore}}</th>
+                <th class="font-weight-normal">{{player.average}}</th>
+                <th class="font-weight-normal">{{player.strikeRate}}</th>
+                <th class="font-weight-normal">{{player.wickets}}</th>
+                <th class="font-weight-normal">{{player.bestWickets}}</th>
+                <th class="font-weight-normal">{{player.centuries}}</th>
+                <th class="font-weight-normal">{{player.fifties}}</th>
+                <th class="font-weight-normal">{{player.foures}}</th>
+                <th class="font-weight-normal">{{player.sixes}}</th>
+                <th class="font-weight-normal">{{player.catches}}</th>
+                <th class="font-weight-normal">{{player.stumpings}}</th>
+                <th>
+                    <a>
+                        <fa [name]="'pencil'" (click)="editPlayer(player)"></fa>
+                    </a>&nbsp;
+                    <a>
+                        <fa [name]="'trash'" (click)="openModal(player)"></fa>
+                    </a>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="deletePlayer()">Yes</button>
+                    <button type="button" class="btn btn-default" (click)="onCloseHandled()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
